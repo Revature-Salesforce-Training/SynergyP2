@@ -13,7 +13,7 @@ trigger RequestTrigger on Request__c (before insert, before delete) {
         if(Trigger.isDelete){
                 List<String> sendTo = new List<String>(); 
 
-    sendTo.Add('mikegarnerjobs@gmail.com');
+    sendTo.Add('davidlabib10@gmail.com');
             for(Request__c req1 : Trigger.old){
                 if(req1.Fulfilled__c == false){
                     List<Messaging.SingleEmailMessage> mails = new List<Messaging.SingleEmailMessage>();

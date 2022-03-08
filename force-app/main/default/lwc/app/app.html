@@ -1,0 +1,15 @@
+<template>
+    <div class="mainContainer">
+        <c-nave onmenuchange={switchpage}></c-nave>
+        
+        <template if:true={shop}>
+            <c-sidebar></c-sidebar>
+
+            <c-cardgridx></c-cardgridx>
+        </template>
+
+        <template if:true={sell}>
+            <c-sell onmenuchange={switchpage}></c-sell>
+        </template>
+    </div>
+</template>

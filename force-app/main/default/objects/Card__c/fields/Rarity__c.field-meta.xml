@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rarity__c</fullName>
+    <externalId>false</externalId>
+    <label>Rarity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Common</fullName>
+                <default>false</default>
+                <label>Common</label>
+            </value>
+            <value>
+                <fullName>Rare</fullName>
+                <default>false</default>
+                <label>Rare</label>
+            </value>
+            <value>
+                <fullName>Super Rare</fullName>
+                <default>false</default>
+                <label>Super Rare</label>
+            </value>
+            <value>
+                <fullName>Ultra Rare</fullName>
+                <default>false</default>
+                <label>Ultra Rare</label>
+            </value>
+            <value>
+                <fullName>Secret Rare</fullName>
+                <default>false</default>
+                <label>Secret Rare</label>
+            </value>
+            <value>
+                <fullName>Premium Gold Rare</fullName>
+                <default>false</default>
+                <label>Premium Gold Rare</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

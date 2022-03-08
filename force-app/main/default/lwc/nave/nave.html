@@ -1,0 +1,38 @@
+<template>
+    <div class="nav-wrapper">
+        <div class="nav">
+            <div class="nav-left">
+                <div class="nav-left-wrapper">
+                    <img aria-label="Yugioh Logo" src ={logo} class ="logo">
+                </div>
+                <form autocomplete="off" class ="form" action="/action_page.php">
+                    <div class="autocomplete active">
+                        <input class="form-control _nsearchInput " onkeyup={handleKeyPress} type="text" placeholder="Search for Cards!" aria-label="Search">
+                        <div class="autocom-box " data-id="divblock">
+                            <template for:each={suggestionBox} for:item="suggest">
+                                <li key={suggest.Id}>
+                                    {suggest.Name}
+                                </li>
+                            </template>
+                        </div>
+                        <div class="icon"><i class ="fas fa-search"></i></div>
+                    </div>
+                </form>
+                    
+                
+                
+            </div>
+            <div class="nav-right">
+
+                <div>
+                    <lightning-button title="Search" icon-name="utility:check" icon-position="center" class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+            <div>
+                <lightning-button label="Sell" title="Sell" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+        
+    </div>
+
+</template>

@@ -1,0 +1,21 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "david",
+            "versionName": "Version 1.3",
+            "versionNumber": "1.3.0.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "david": "0Ho8c000000wk2xCAA",
+        "david@1.0.0-1": "04t8c000001MUTsAAO",
+        "david@1.1.0-1": "04t8c000001MZPeAAO",
+        "david@1.2.0-1": "04t8c000001MbLxAAK",
+        "david@1.3.0-1": "04t8c000001MbQPAA0"
+    }
+}

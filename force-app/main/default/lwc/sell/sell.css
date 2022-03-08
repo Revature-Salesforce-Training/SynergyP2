@@ -1,0 +1,38 @@
+.sellForm{
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 5px;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 100px;
+}
+.sellFormFields{
+    padding: 32px;
+}
+.sellConfirm{
+    padding: 16px;
+    text-align: center;
+}
+.marinMargin{
+    height:72px;
+}
+.Sellbackground{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    width: 100vw;
+    height:100vh;
+    
+    }
+    
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

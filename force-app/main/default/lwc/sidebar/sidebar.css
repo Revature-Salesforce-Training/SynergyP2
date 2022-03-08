@@ -1,0 +1,21 @@
+.sidebar{
+    padding: 16px;
+    width: 200px;
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    opacity: 0.9;
+}
+.radio-group{
+    --sds-c-radio-mark-color-foreground: orange;
+    /*--slds-c-radio-color-background: orange;   
+    --slds-c-radio-shadow: 10px;*/
+    --slds-c-radio-color-border: orange;
+    --slds-c-radio-color-border-checked: orange;
+    --slds-c-radio-color-border-focus: orange;
+    padding: 8px;
+}
+.content{
+    margin-left: 200px;
+}

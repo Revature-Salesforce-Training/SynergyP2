@@ -14,7 +14,6 @@ public with sharing class getCardsForSearchBarFiltered {
         return cards;
 
     
-
     }
 }
 

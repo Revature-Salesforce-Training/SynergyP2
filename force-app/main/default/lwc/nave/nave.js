@@ -1,9 +1,22 @@
-import {LightningElement, track} from 'lwc';
+import {LightningElement, track, wire} from 'lwc';
 import YUGIOH_LOGO from '@salesforce/resourceUrl/michaelYugioh';
+import getAllCardsForSearchBar from '@salesforce/apex/getAllCardsForSearchBar.getAllCardsForSearchBar';
+
 
 export default class nave extends LightningElement{
     //Initialize mock list of Queries
     countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia"];
+    @track cards;
+    @wire(getAllCardsForSearchBar) 
+    AllCards({error, data}){
+        if(data){
+            this.cards = data;
+            this.error = undefined;
+        } else if(error){
+            this.error = error;
+            this.cards = undefined;
+        }
+    };
 
     //Initialize variables
     searchWrapper = this.template.querySelector(".autocomplete");
@@ -24,7 +37,7 @@ export default class nave extends LightningElement{
 
         //If data exists, filters the selected array for names
         if(userData){
-            emptyArray = this.countries.filter((data)=>{
+            emptyArray = this.cards.filter((data)=>{
                 return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
             });
             emptyArray = emptyArray.map((data)=>{
@@ -71,5 +84,9 @@ export default class nave extends LightningElement{
     handleClick(e){
         this.dispatchEvent(new CustomEvent('menuchange', {detail : e.target.title}));
         console.log(e.target.title);
+    }
+
+    testClick(){
+        console.log(this.cards);
     }
 }

@@ -112,7 +112,6 @@ export default class App extends LightningElement {
             });
         }
 
-        console.log(this.cards.originalTarget);
     }
     renderedCallback(){
         /*

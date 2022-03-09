@@ -2,7 +2,7 @@
 ## Responsabilities
 
 ### David
-sidebar lwc 
+sidebar lwc <br>
 Filter Apex Class
 
 

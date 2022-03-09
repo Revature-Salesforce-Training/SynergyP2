@@ -4,10 +4,16 @@
 
 ### David
 sidebar lwc <br>
-Filter Apex Class
-
+Filter Apex Class and Test <br>
+GetPickListValues Apex Class and Test <br>
+Set Deletion Trigger <br>
 
 ### Michael
+nave lwc <br>
+Request Trigger <br>
+Request Test <br>
+GetAllCardsForsearchbar apex class <br>
+request card form Aura component <br>
 
 ### Mountain
 

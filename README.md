@@ -1,5 +1,5 @@
 # Team Synergy: YUGIOH SHOP PROJECT P2
-# A Shop to buy and sell YUGIOH card!
+## A Shop to buy and sell YUGIOH card!
 ## Responsabilities
 
 ### David

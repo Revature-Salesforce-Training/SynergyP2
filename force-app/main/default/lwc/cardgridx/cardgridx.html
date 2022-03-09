@@ -1,0 +1,502 @@
+<template>
+    <div class="grid-container">
+        <div class="grid-container-cart">
+          <div class="sticky-cart-flex-container">
+            <div class="card-info-flex-container sticky-cart">
+              
+              <img class="cart-img"
+               src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cart-supermarket-flatart-icons-flat-flatarticons.png"
+              />
+            
+              <div class="price-container-flex"><h2 class="cart-total">$0.00</h2><div class="cart-buttons-container"><button class="purchase-btn">Checkout</button><button class="empty-btn">Empty Cart</button></div></div>
+            </div>
+  
+            <div class="cart-body">
+              <div class="br-mini mini-card-cont" hidden>   <img class="mini-card" src={BlackRoseDragon} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="cg-mini mini-card-cont" hidden>   <img class="mini-card" src={CalledByTheGrave} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="tt-mini mini-card-cont" hidden>   <img class="mini-card" src={TrapTrick} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="el-mini mini-card-cont" hidden>   <img class="mini-card" src={Electrumite} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="ev-mini mini-card-cont" hidden>   <img class="mini-card" src={EvenlyMatched} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="rc-mini mini-card-cont" hidden>   <img class="mini-card" src={RescueCat} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="zr-mini mini-card-cont" hidden>   <img class="mini-card" src={ZoodiacRatpier} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="zd-mini mini-card-cont" hidden>   <img class="mini-card" src={ZoodiacDrident} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="gg-mini mini-card-cont" hidden>   <img class="mini-card" src={ThatGrassLooksGreener} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>
+              <div class="ss-mini mini-card-cont" hidden>   <img class="mini-card" src={SkyStrikerEngage} alt=""><div class="overlay"><span class="cart-quantity-container">&#215;<span class="cart-quantity"></span></span></div></div>      
+            </div>
+          </div>
+        </div>
+        
+        <main>
+          
+          <!-- <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                      <h1>John Doe</h1>
+                      <p>Architect & Engineer</p>
+                      <p>We love that guy</p>
+                    </div>
+                  </div>
+                </div> -->
+  
+          <div  class="card-info-flex-container black-rose">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front black-rose">
+                  <img src={BlackRoseDragon} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={BlackRoseDragon}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.BlackRoseDragon.name}</h2>
+              <p>Card Set: <span>{mock_card_database.BlackRoseDragon.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.BlackRoseDragon.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.BlackRoseDragon.type}</span></p>
+              <p>Left in Stock: <span class="black-rose-stock">{mock_card_database.BlackRoseDragon.instock}</span></p>
+              <p>Price: <span class="black-rose-price">{mock_card_database.BlackRoseDragon.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-black-rose"
+                    class="Qty Qty-black-rose"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="br" class="add-to-cart black-rose" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="black-rose qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container called-grave">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front called-grave">
+                  <img src={CalledByTheGrave} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={CalledByTheGrave}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.CallByTheGrave.name}</h2>
+              <p>Card Set: <span>{mock_card_database.CallByTheGrave.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.CallByTheGrave.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.CallByTheGrave.type}</span></p>
+              <p>Left in Stock: <span class="called-grave-stock">{mock_card_database.CallByTheGrave.instock}</span></p>
+              <p>Price: <span class="called-grave-price">{mock_card_database.CallByTheGrave.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-grave"
+                    class="Qty Qty-grave"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="cg" class="add-to-cart called-grave" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="called-grave qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container traptrick">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front traptrick">
+                  <img src={TrapTrick} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={TrapTrick}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.TrapTrick.name}</h2>
+              <p>Card Set: <span>{mock_card_database.TrapTrick.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.TrapTrick.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.TrapTrick.type}</span></p>
+              <p>Left in Stock: <span class="traptrick-stock">{mock_card_database.TrapTrick.instock}</span></p>
+              <p>Price: <span class="traptrick-price">{mock_card_database.TrapTrick.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-traptrick"
+                    class="Qty Qty-traptrick"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="tt" class="add-to-cart traptrick" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="traptrick qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container electrumite">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front electrumite">
+                  <img src={Electrumite} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={Electrumite}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+  
+            <div class="card-info">
+              <h2>{mock_card_database.HeavyMetal.name}</h2>
+              <p>Card Set: <span>{mock_card_database.HeavyMetal.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.HeavyMetal.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.HeavyMetal.type}</span></p>
+              <p>Left in Stock: <span class="electrumite-stock">{mock_card_database.HeavyMetal.instock}</span></p>
+              <p>Price: <span class="electrumite-price">{mock_card_database.HeavyMetal.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-electrumite"
+                    class="Qty Qty-electrumite"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="el" class="add-to-cart electrumite" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="electrumite qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container evenlymatched">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front evenlymatched">
+                  <img src={EvenlyMatched} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={EvenlyMatched}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.EvenlyMatched.name}</h2>
+              <p>Card Set: <span>{mock_card_database.EvenlyMatched.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.EvenlyMatched.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.EvenlyMatched.type}</span></p>
+              <p>Left in Stock: <span class="evenlymatched-stock">{mock_card_database.EvenlyMatched.instock}</span></p>
+              <p>Price: <span class="evenlymatched-price">{mock_card_database.EvenlyMatched.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-evenlymatched"
+                    class="Qty Qty-evenlymatched"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="em" class="add-to-cart evenlymatched" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="evenlymatched qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container rescuecat">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front rescuecat">
+                  <img src={RescueCat} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={RescueCat}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.RescueCat.name}</h2>
+              <p>Card Set: <span>{mock_card_database.RescueCat.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.RescueCat.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.RescueCat.type}</span></p>
+              <p>Left in Stock: <span class="rescuecat-stock">{mock_card_database.RescueCat.instock}</span></p>
+              <p>Price: <span class="rescuecat-price">{mock_card_database.RescueCat.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-rescuecat"
+                    class="Qty Qty-rescuecat"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="rc" class="add-to-cart rescuecat" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="rescuecat qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container skystriker">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front skystriker">
+                  <img
+                    src={SkyStrikerEngage}
+                    alt=""
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={SkyStrikerEngage}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.SkyStrikerEngage.name}</h2>
+              <p>Card Set: <span>{mock_card_database.SkyStrikerEngage.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.SkyStrikerEngage.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.SkyStrikerEngage.type}</span></p>
+              <p>Left in Stock: <span class="skystriker-stock">{mock_card_database.SkyStrikerEngage.instock}</span></p>
+              <p>Price: <span class="skystriker-price">{mock_card_database.SkyStrikerEngage.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-skystriker"
+                    class="Qty Qty-skystriker"
+                    min="1"
+                    max="25"
+                    
+                  />
+                  <div>
+                    <button data-addtocart="ss" class="add-to-cart skystriker" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="skystriker qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container grass-greener">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front grass-greener">
+                  <img src={ThatGrassLooksGreener} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={ThatGrassLooksGreener}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.ThatGrassLooksGreener.name}</h2>
+              <p>Card Set: <span>{mock_card_database.ThatGrassLooksGreener.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.ThatGrassLooksGreener.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.ThatGrassLooksGreener.type}</span></p>
+              <p>Left in Stock: <span class="grass-greener-stock">{mock_card_database.ThatGrassLooksGreener.instock}</span></p>
+              <p>Price: <span class="grass-greener-price">{mock_card_database.ThatGrassLooksGreener.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-grass-greener"
+                    class="Qty Qty-grass-greener"
+                    min="1"
+                    max="25"
+                   
+                  />
+                  <div>
+                    <button data-addtocart="gg" class="add-to-cart grass-greener" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="grass-greener qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container zoodiac-dri">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front zoodiac-dri">
+                  <img src={ZoodiacDrident} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={ZoodiacDrident}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+  
+            <div class="card-info">
+              <h2>{mock_card_database.ZoodiacDrident.name}</h2>
+              <p>Card Set: <span>{mock_card_database.ZoodiacDrident.name.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.ZoodiacDrident.name.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.ZoodiacDrident.name.type}</span></p>
+              <p>Left in Stock: <span class="zoodiac-dri-stock">{mock_card_database.ZoodiacDrident.name.instock}</span></p>
+              <p>Price: <span class="zoodiac-dri-price">{mock_card_database.ZoodiacDrident.name.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-zoodiac-dri"
+                    class="Qty Qty-zoodiac-dri"
+                    min="1"
+                    max="25"
+            
+                  />
+                  <div>
+                    <button data-addtocart="zd" class="add-to-cart zoodiac-dri" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="zoodiac-dri qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+          <div  class="card-info-flex-container zoodiac-rat">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="card-image-container flip-card-front zoodiac-rat">
+                  <img src={ZoodiacRatpier} alt="" />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src={ZoodiacRatpier}
+                    alt=""
+                    width="100%"
+                    height="150%"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2>{mock_card_database.ZoodiacRatpier.name}</h2>
+              <p>Card Set: <span>{mock_card_database.ZoodiacRatpier.set}</span></p>
+              <p>Rarity: <span>{mock_card_database.ZoodiacRatpier.rarity}</span></p>
+              <p>Type: <span>{mock_card_database.ZoodiacRatpier.type}</span></p>
+              <p>Left in Stock: <span class="zoodiac-rat-stock">{mock_card_database.ZoodiacRatpier.instock}</span></p>
+              <p>Price: <span class="zoodiac-rat-price">{mock_card_database.ZoodiacRatpier.price}</span></p>
+              <div class="flex-max-qty-warning">
+                <div class="flex-qty-container">
+                  <p>Qty:</p>
+                  <sup class="red-asterisk">*</sup>
+                  <input
+                    type="number"
+                    name="Qty-zoodiac-rat"
+                    class="Qty Qty-zoodiac-rat"
+                    min="1"
+                    max="25"
+                  
+                  />
+                  <div>
+                    <button data-addtocart="zr" class="add-to-cart zoodiac-rat" onclick={handleAddToCart} role="button">
+                      <p>Add to Cart</p>
+                    </button>
+                  </div>
+                </div>
+                <p class="zoodiac-rat qty-warning-text"></p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      
+</template>

@@ -1,0 +1,348 @@
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+html, body {
+  height: 100%;  
+}
+
+body{
+margin: 0;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button{
+  /* width: fit-content; */
+  font-size: .85em;
+}
+
+button > p{
+  display: flex;
+  align-content: center;
+}
+
+
+.grid-container {
+margin-top: 72px;
+margin-left: 200px;
+height: 100%;
+display: grid;
+grid-template-rows: 1fr 8fr 1fr;
+
+}
+
+.grid-container-cart{
+  margin: 5px 0 0 5px;
+  display: flex;
+  width: 20%;
+  position: sticky;
+  top: 72px;
+  z-index: 10;
+  align-self: start; 
+  
+
+}
+
+.sticky-cart-flex-container{
+  display: flex;
+  width: fit-content;
+  align-content: center;
+  
+  
+}
+
+.card-info-flex-container.sticky-cart>img{
+  
+  padding-right: 10px;
+}
+
+.card-info-flex-container.sticky-cart > h2{
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+
+
+
+
+.cart-body{
+  /* position: relative; */
+  display: flex;
+  
+  width: 100%;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  
+  
+}
+.cart-body>div{
+  margin: 5px;
+  padding: 0;
+  
+}
+.overlay{
+  position: absolute;
+  top: 0px;
+  
+ 
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  margin: 5px;
+  margin-left: 0px;
+  padding: 0;
+  width: 55px;
+  height: 80px;
+  color: white;
+  text-align: center;
+  font-size: .8em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  display: none;
+
+}
+
+.cart-quantity-container{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 50% 50% 50% 35%;
+  padding: 1px;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1em;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.5em;
+ 
+}
+
+.cart-buttons-container{
+  display: flex;
+  margin-left: 2px;
+}
+
+.cart-buttons-container > button{
+  
+  padding: 1px;
+  width: fit-content;
+  font-size: .75em;
+  border-radius: 4px;
+  margin: 2px;
+  border: 1px solid gray;
+  white-space: nowrap;
+
+  
+ 
+}
+.mini-card{
+  width: fit-content;
+  /* width: 40px; */
+ height: 80px;
+}
+
+.price-container-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-total{
+  text-align: center;
+  font-size: 2em;
+}
+
+.sticky-cart.expand-height{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  align-self: start; 
+  width: 50px;
+  height: 50px;
+ 
+  border-radius: 50%;
+}
+
+.flex-qty-container{
+
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  }
+
+.flex-qty-container > sup{
+padding-right: 10px;
+}
+
+.red-asterisk{
+  color: rgb(206, 58, 0);
+  font-size: .8em;
+}
+
+.qty-warning-text{
+  margin-top: .5em;
+  color: rgb(206, 58, 0);
+  font-size: .7em;
+}
+
+.Qty{
+  margin-right: 0.5em;
+}
+
+.card-info{
+padding: 10px;
+min-width: 50%;
+
+
+word-wrap: break-word;
+
+
+}
+
+button >p {
+  font-size: .75em;
+  padding: 2px;
+}
+
+.card-info-flex-container{
+border-radius: 10px;
+padding: 10px;
+display: flex;
+background-color: rgb(253, 249, 243);
+-webkit-transition: background-color 200ms linear;
+-ms-transition: background-color 200ms linear;
+transition: background-color 200ms linear;
+box-shadow: 0px 0px 10px 0px rgba(158, 158, 158, 0.75);
+}
+.card-info-flex-container:hover{
+background-color: rgb(252, 252, 252);
+
+}
+
+main{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-gap: 10px;
+}
+
+.card-image-container img {
+width: 100%;
+
+}
+.card-image-container img:hover {
+box-shadow: 0 4px 8px 0 rgb(0, 217, 255), 0 6px 20px 0 rgb(0, 255, 98),  0 6px 20px 0 rgb(98, 0, 255);
+
+}
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; 
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  width: 8rem;
+  height: 8rem;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+header{
+  background-color: #b80c0c;
+  padding: 10px;
+  text-align: center;
+}
+
+main{
+  /* background-color: #0026ff; */
+  padding: 10px;
+  text-align: center;
+}
+
+footer{
+  background-color: #ffae00;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Whitney's add to cart button */
+
+.add-to-cart .purchase {
+align-items: center;
+background-color: rgba(240, 240, 240, 0.26);
+border: 1px solid #fa966e;
+border-radius: 16px;
+box-sizing: border-box;
+color: #000000;
+cursor: pointer;
+display: flex;
+font-family: Inter, sans-serif;
+font-size: 18px;
+justify-content: center;
+line-height: 10px;
+max-width: 100%;
+padding: 14px 22px;
+text-decoration: none;
+transition: all .2s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+width: 100%;
+}
+
+.add-to-cart:active,
+.add-to-cart:hover, 
+.purchase:active, 
+.purchase:hover {
+outline: 0;
+}
+
+.add-to-cart:hover,
+.purchase:hover {
+background-color: #fc957e;
+border-color: rgba(0, 0, 0, 0.19);
+}

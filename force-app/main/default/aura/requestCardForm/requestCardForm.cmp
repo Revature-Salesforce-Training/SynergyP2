@@ -1,4 +1,14 @@
-<aura:component>
+<aura:component controller="RequestsController" >
+    <aura:attribute name="Requests" type="Request__c[]"/>
+    <aura:attribute name="newRequest" type="Request__c"
+         default="{ 'sObjectType': 'Request__c',
+                        'Name': '',
+                        'Quantity__c': 0,
+                        'Email__c': '',
+                        'Date__c': '',
+                        'Express__c': false,
+						'Description__c':'' }"/>
+
     <!-- PAGE HEADER -->
     <lightning:layout class="slds-page-header slds-page-header_object-home">
         <lightning:layoutItem>
@@ -29,27 +39,29 @@
         </legend>
         <!-- CREATE NEW EXPENSE FORM -->
         <form class="slds-form_stacked">
-            <lightning:input aura:id="expenseform" label="Card Name"
+            <lightning:input aura:id="requestform" label="Card Name"
                              name="expensename"
-                             value="{!v.newExpense.Name}"
-                             required="true"/>
-            <lightning:input type="number" aura:id="expenseform" label="Quantity"
+                             value="{!v.newRequest.Name}"
+                             required="true"
+							messageWhenValueMissing="Did you forget me?"
+                             />
+            <lightning:input type="number" aura:id="requestform" label="Quantity"
                              name="expenseamount"
                              min="0.1"
-                             formatter="currency"
+                             formatter="number"
                              step="0.01"
-                             value="{!v.newExpense.Amount__c}"
+                             value="{!v.newRequest.Quantity__c}"
                              messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
-            <lightning:input aura:id="expenseform" label="Email"
+            <lightning:input aura:id="requestform" label="Email"
                              name="expenseclient"
-                             value="{!v.newExpense.Client__c}"
+                             value="{!v.newRequest.Email__c}"
                              placeholder="ABC Co."/>
-            <lightning:input type="date" aura:id="expenseform" label="Expense Date"
+            <lightning:input type="date" aura:id="requestform" label="Request Date Expected"
                              name="expensedate"
-                             value="{!v.newExpense.Date__c}"/>
-            <lightning:input type="checkbox" aura:id="expenseform" label="Reimbursed?"
+                             value="{!v.newRequest.Date__c}"/>
+            <lightning:input type="checkbox" aura:id="requestform" label="Express?"
                              name="expreimbursed"
-                             checked="{!v.newExpense.Reimbursed__c}"/>
+                             checked="{!v.newRequest.Express__c}"/>
             <lightning:button label="Order Date"
                               class="slds-m-top_medium"
                               variant="brand"

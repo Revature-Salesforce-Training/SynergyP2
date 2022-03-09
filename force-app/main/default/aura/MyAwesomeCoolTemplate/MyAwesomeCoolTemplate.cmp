@@ -5,4 +5,5 @@
 
 <aura:component implements="forceCommunity:themeLayout">
 	<c:app></c:app>
+	<c:requestCardForm></c:requestCardForm>
 </aura:component>

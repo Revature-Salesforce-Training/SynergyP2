@@ -1,3 +1,8 @@
+/****************************** 
+ * Written by: David Labib
+ * Description: Test for the Filter
+ * Code Coverage 100%
+*****************************/
 @isTest
 public class FilterTest {
 	

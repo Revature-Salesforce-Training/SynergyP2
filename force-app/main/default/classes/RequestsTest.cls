@@ -1,6 +1,11 @@
+/**********************************
+ * Written by: Whitney Dwire and Michael Siri
+ * Description: Test methods for the RequestTrigger
+ */
+
 @isTest
 public class RequestsTest {
-
+//Written by Whitney
     @isTest
     static void TestRequestTrigger(){
         Request__c req = new Request__c(Name = 'Dark Hole', Quantity__c = 100);
@@ -10,7 +15,7 @@ public class RequestsTest {
 
     }
     
-
+//Written by Michael
    @IsTest
    static void testThatEmailWasSent(){
 

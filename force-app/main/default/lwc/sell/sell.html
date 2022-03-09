@@ -1,9 +1,20 @@
+<!--
+    Written by: Whitney Dwire
+    Description: This html houses the form 
+    so a user can sell their cards
+    and adds it as a record
+    to the Bought Cards Object
+-->
+
+
 <template>
     <div class="Sellbackground">
     <div class="marinMargin"></div>
+    <!-- The form the user sees when they enter the page -->
         <template if:true={formVis}>
             <div class="sellForm">
                 <div class="sellFormFields">
+                    <!-- Using lighting record edit form to create a new record on the bought card object -->
                     <lightning-record-edit-form object-api-name="Bought_Card__c">
                         <lightning-messages> </lightning-messages>
                         <lightning-input-field field-name="First_Name__c"> </lightning-input-field>
@@ -24,7 +35,9 @@
                 </div>
             </div>
         </template>
-
+        <!-- When the user submits the form, this part of the markup will render as a confirmation
+        They can click on the button and submit more and will take them back to the form
+        -->
         <template if:false={formVis}>
             <div class="sellForm">
                 <div class="sellConfirm">

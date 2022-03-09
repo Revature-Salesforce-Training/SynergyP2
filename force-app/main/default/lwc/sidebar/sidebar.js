@@ -1,9 +1,19 @@
+/********************************
+ * Writer: David Labib
+ * Description: This script calls the 
+ * apex methods to retivie the options for the filtering
+ * when a user clicks on a filter, the other 
+ * apex methods will be called to retivie the results
+ *******************************/
+
+
 import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
 import { LightningElement, track, wire } from 'lwc';
+//the apex classes for actual filtering
 import FilterByCardType from '@salesforce/apex/Filter.FilterByCardType';
 import FilterByRarity from '@salesforce/apex/Filter.FilterByRarity';
 import FilterBySet from '@salesforce/apex/Filter.FilterBySet';
-
+//the apex classes to get the options for filtering
 import getCardTypes from '@salesforce/apex/GetPicklistValues.getCardTypes';
 import getRarity from '@salesforce/apex/GetPicklistValues.getRarity';
 import getSets from '@salesforce/apex/GetPicklistValues.getSets';
@@ -20,6 +30,8 @@ export default class App extends LightningElement {
     Evenly = EvenlyMatched;
     ZoodiacDrident = CardImages + '/images/ZoodiacDrident.webp';
     
+    //wire methods to get the options for filtering
+    //as soon as the component is called
     @wire(getCardTypes) 
     CardTypes({error, data}){
         if(data){
@@ -57,7 +69,7 @@ export default class App extends LightningElement {
     @track cards;
     @track error;
     value = '';
-
+    //pass through the array of options to the radio in markup
     get TypeOptions() {
         
         return this.options1;
@@ -71,8 +83,9 @@ export default class App extends LightningElement {
     get SetOptions() {
         return this.options3;
     }
-
+    //this function fires when the user clicks on a radio options
     handle(e){
+        //check the name of the radio that triggered the event, to call the correct apex method for filtering
         if(e.target.name == 'CardType'){
             console.log(e.target.value);
             FilterByCardType({CardType: e.target.value})

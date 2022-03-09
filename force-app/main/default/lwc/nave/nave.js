@@ -1,3 +1,9 @@
+/*************************
+ * Written by: Michael Siri
+ * Description: 
+ ****************************/
+
+
 import {LightningElement, track, wire} from 'lwc';
 import YUGIOH_LOGO from '@salesforce/resourceUrl/michaelYugioh';
 import getAllCardsForSearchBar from '@salesforce/apex/getAllCardsForSearchBar.getAllCardsForSearchBar';
@@ -5,7 +11,6 @@ import getAllCardsForSearchBar from '@salesforce/apex/getAllCardsForSearchBar.ge
 
 export default class nave extends LightningElement{
     //Initialize mock list of Queries
-    countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia"];
     @track cards;
     @wire(getAllCardsForSearchBar) 
     AllCards({error, data}){
